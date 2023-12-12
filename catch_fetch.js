@@ -1,8 +1,10 @@
+import axios from 'axios';
+
 export function fetchRandomCatImage() {
     const apiUrl = 'https://cataas.com/cat?json=true';
 
-    fetch(apiUrl)
-        .then((response) => response.json())
+    axios(apiUrl)
+        .then((response) => response.data)
         .then((data) => {
             const catData = data;
             const catImageContainer = 
